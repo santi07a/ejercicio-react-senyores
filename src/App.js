@@ -31,14 +31,6 @@ function App() {
       marcado: true
     }
   ];
-  const senyorMarcado = () => {
-    for (const senyor of senyores) {
-      if (senyor.marcado === true) {
-      }
-    }
-  };
-
-
   return (
     <>
       <div className="contenedor">
