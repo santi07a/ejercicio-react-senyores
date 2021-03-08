@@ -1,6 +1,5 @@
 
 import "./index.css";
-import { useState } from "react";
 
 function App() {
   const senyores = [
@@ -32,21 +31,27 @@ function App() {
       marcado: true
     }
   ];
-  const marcarSenyor = () => {
-
+  const senyorMarcado = () => {
+    for (const senyor of senyores) {
+      if (senyor.marcado === true) {
+      }
+    }
   };
+
 
   return (
     <>
       <div className="contenedor">
-        <header classclassName="cabecera">
+        <header className="cabecera">
           <h1>Señores que te apuntan con el dedo</h1>
-          <p classclassName="totales"><span classclassName="nmarcados">0</span> señores que te apuntan con el dedo marcados</p>
-          <a classclassName="accion-marcar" href="marcar-todos">Marcar todos</a>
+          <p className="totales"><span className="nmarcados">{
+            senyores.filter(senyor => senyor.marcado === true).length
+          }</span> señores que te apuntan con el dedo marcados</p>
+          <a className="accion-marcar" href="marcar-todos">Marcar todos</a>
         </header>
         {
           senyores.map(senyor =>
-            <article className="senyor" >
+            <article key={senyor.id} className="senyor" >
               <div className="avatar">
                 <img src={`img/${senyor.foto}`} alt={`${senyor.nombre} señalándote con el dedo`} />
                 <span className="inicial">{senyor.nombre[0]}</span>
@@ -59,7 +64,7 @@ function App() {
                   <li><span className="etiqueta">Twitter:</span>{senyor.twitter}</li>
                 </ul>
               </div>
-              <i className="icono fas fa-check"></i>
+              <i className={`icono ${senyor.marcado ? "" : "off"} fas fa-check`}></i>
             </article>
           )
         }
