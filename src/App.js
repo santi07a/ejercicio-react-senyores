@@ -32,18 +32,21 @@ function App() {
       marcado: true
     }
   ];
+  const marcarSenyor = () => {
+
+  };
 
   return (
     <>
       <div className="contenedor">
-        <header classNameNameName="cabecera">
+        <header classclassName="cabecera">
           <h1>Señores que te apuntan con el dedo</h1>
-          <p classNameNameName="totales"><span classNameNameName="nmarcados">0</span> señores que te apuntan con el dedo marcados</p>
-          <a classNameNameName="accion-marcar" href="marcar-todos">Marcar todos</a>
+          <p classclassName="totales"><span classclassName="nmarcados">0</span> señores que te apuntan con el dedo marcados</p>
+          <a classclassName="accion-marcar" href="marcar-todos">Marcar todos</a>
         </header>
         {
           senyores.map(senyor =>
-            <article className="senyor">
+            <article className="senyor" >
               <div className="avatar">
                 <img src={`img/${senyor.foto}`} alt={`${senyor.nombre} señalándote con el dedo`} />
                 <span className="inicial">{senyor.nombre[0]}</span>
