@@ -31,6 +31,8 @@ function App() {
       marcado: true
     }
   ];
+
+
   return (
     <>
       <div className="contenedor">
@@ -45,7 +47,7 @@ function App() {
           senyores.map(senyor =>
             <article key={senyor.id} className="senyor" >
               <div className="avatar">
-                <img src={`img/${senyor.foto}`} alt={`${senyor.nombre} señalándote con el dedo`} />
+                <img src={`img/${senyor.foto}`} alt={`${senyor.nombre} señalándote con el dedo`} className={senyor.marcado ? "" : "gira"} />
                 <span className="inicial">{senyor.nombre[0]}</span>
               </div>
               <div className="info">

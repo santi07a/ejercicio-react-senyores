@@ -84,7 +84,7 @@ html {
   transition: transform 0.3s;
 }
 
-.senyor:hover .avatar img {
+.senyor:hover .avatar .gira {
   transform: rotateY(180deg);
 }
 
